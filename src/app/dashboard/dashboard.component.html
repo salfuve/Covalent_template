@@ -12,7 +12,7 @@
   <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
     <div flex-gt-sm="column.columnSize" *ngFor="let column of imageArray">
       <md-card *ngFor="let image of column.column">
-        <img md-card-image (click)="clickedImage(image.url)" [class.biggerImg]="image.isclicked" [src]=image.url>
+        <img class="img" md-card-image (click)="clickedImage(image.url)" [class.biggerImg]="image.isclicked" [src]=image.url>
         <md-card-actions>
           <div layout="row" class="tc-grey-600">
             <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
