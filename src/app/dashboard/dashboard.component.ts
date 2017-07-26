@@ -17,7 +17,52 @@ import { multi } from './data';
   viewProviders: [ ItemsService, ProductsService, AlertsService ],
 })
 export class DashboardComponent implements OnInit {
-
+imageArray: any[] = [{
+    columnSize: '40',
+    column: [{
+        url: '../../assets/images/alex-lambley-205711.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/norman-toth-177290.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/kaci-baum-108756.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/ariel-lustre-232891.jpg',
+        isclicked: false,
+    }],
+  }, {
+    columnSize: '25',
+    column: [{
+        url: '../../assets/images/pete-bellis-189599.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/remy_loz-188297.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/brooke-cagle-195860.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/freestocks-org-195640.jpg',
+        isclicked: false,
+      }],
+  }, {
+    columnSize: '25',
+    column: [{
+        url: '../../assets/images/pete-bellis-189613.jpg',
+        isclicked: false,
+      }, {
+        url: '../../assets/images/pete-bellis-191833.jpg',
+        isclicked: false,
+      }],
+  }, {
+    columnSize: '25',
+    column: [{
+        url: '../../assets/images/valerie-elash-275588.jpg',
+        isclicked: false,
+    }],
+  }];
   items: Object[];
   users: IUser[];
   products: Object[];
