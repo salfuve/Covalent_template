@@ -61,12 +61,13 @@ export class DashboardComponent implements OnInit {
     }],
   }];
 
-  constructor(private _titleService: Title) { }
+  constructor(private _titleService: Title, private router: Router) { }
 
   ngOnInit(): void {
     this._titleService.setTitle('Covalent Quickstart');
   }
-  // clickedImage(imageUrl: string): void {
 
-  // }
+  clickedImage(imageUrl: any): void {
+    this.router.navigate(['/image-view']);
+  }
 }
