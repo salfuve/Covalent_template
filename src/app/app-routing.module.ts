@@ -2,23 +2,16 @@ import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImageViewComponent } from './image-view/image-view.component';
 
 const routes: Routes = [
 
     {
+        component: DashboardComponent,
         path: '',
-        component: MainComponent,
-
-        children: [
-            {
-                component: DashboardComponent,
-                path: '',
-            },
-        ],
     },
+
     {
         path: '',
         component: ImageViewComponent,
@@ -35,7 +28,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routedComponents: any[] = [
-    MainComponent,
     DashboardComponent,
     ImageViewComponent,
 ];
