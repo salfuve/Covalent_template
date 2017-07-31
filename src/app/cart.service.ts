@@ -1,19 +1,11 @@
-import { TdDialogService } from '@covalent/core/dialogs/services/dialog.service';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { TdLoadingService, TdDigitsPipe, CovalentNotificationsModule } from '@covalent/core';
+import { Injectable } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
 
-import { CartService } from '../cart.service';
+@Injectable()
+export class CartService {
 
-@Component({
-  selector: 'qs-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
-  // providers: [CartService],
-})
-export class DashboardComponent implements OnInit {
+  itemArray: string[] = [];
+
   imageArray: any[] = [{
 
     columnSize: '40',
@@ -67,27 +59,21 @@ export class DashboardComponent implements OnInit {
     }],
   }];
 
-  constructor(
-    private _titleService: Title,
-    private router: Router,
-    private dialogService: TdDialogService,
-    public snackBar: MdSnackBar,
-    private cartService: CartService) { }
+  constructor(public snackBar: MdSnackBar) { }
 
-  ngOnInit(): void {
-    this._titleService.setTitle('Covalent Quickstart');
+  public clickedAddToCart(imageUrl: any): void {
+    const items: string[] = this.itemArray;
+    const msg: string = 'Added to cart';
+    const action: string = 'Ok';
+    const color: string = 'green';
+    const duration: number = 2000;
+    this.snackBar.open(msg, action, {
+      duration: duration,
+      extraClasses: ['bgc-' + color + '-600'],
+    });
+    items.push(imageUrl);
   }
-
-  clickedImage(imageUrl: any): void {
-    this.router.navigate(['/image-view', { url: imageUrl }]);
-
-  }
-  clickedAddToCart(imageUrl: any): void {
-    const img: string = imageUrl;
-    this.cartService.clickedAddToCart(img);
-  }
-  notifications(): number {
-    const nItems: number = this.cartService.getNitems();
-    return nItems;
+  public getNitems(): number {
+    return this.itemArray.length;
   }
 }

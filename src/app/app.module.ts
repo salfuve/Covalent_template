@@ -1,3 +1,5 @@
+import { CartService } from './cart.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule, Type } from '@angular/core';
 import { BrowserModule, Title }  from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +15,7 @@ import { routedComponents, AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 import { ImageViewComponent } from './image-view/image-view.component';
+import { CartComponent } from './cart/cart.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -23,6 +26,8 @@ const httpInterceptorProviders: Type<any>[] = [
     AppComponent,
     routedComponents,
     ImageViewComponent,
+    CartComponent,
+    DashboardComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,
@@ -39,6 +44,7 @@ const httpInterceptorProviders: Type<any>[] = [
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
+    CartService,
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ AppComponent ],

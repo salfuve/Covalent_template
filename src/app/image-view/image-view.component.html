@@ -1,3 +1,9 @@
-<div class="big-img">
-  <img src="../../assets/images/alex-lambley-205711.jpg" (click)="clickedImage()">
+<div>
+  <div class="header-icons">
+    <button class="buttons" md-icon-button mdTooltip="Close">
+      <md-icon class="close-icon" (click)="clickedImage()">close
+      </md-icon>
+    </button>
+ </div>
+  <img class="big-img" src={{imageUrl}}>
 </div>

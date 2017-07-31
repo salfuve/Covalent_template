@@ -1,3 +1,4 @@
+import { CartService } from './cart.service';
 import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,7 +14,7 @@ const routes: Routes = [
     },
 
     {
-        path: '',
+        path: 'image-view',
         component: ImageViewComponent,
     },
 ];

@@ -1,8 +1,28 @@
 <td-layout-nav logo="assets:covalent">
+
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <button md-icon-button mdTooltip="Cart"><md-icon>shopping_cart</md-icon></button>
+    <button md-icon-button [mdMenuTriggerFor]="cart" mdTooltip="Cart" (click)="clickedCart()"> 
+      <td-notification-count positionX="after" positionY="bottom"color="accent" [notifications]="notifications()">
+        <md-icon>shopping_cart</md-icon>
+      </td-notification-count>
+    </button>
+    <md-menu #cart="mdMenu">
+      <td-menu>
+        <div td-menu-header class="md-subhead">Products in your cart</div>
+        <md-nav-list dense>
+          <a md-list-item *ngFor="let item of itemArray">
+            <md-icon md-list-avatar>today</md-icon>
+            <h4 md-line><span class="text-wrap">item</span></h4>
+          </a>
+          <md-divider *ngIf="!last"></md-divider>
+        </md-nav-list>
+        <button md-button color="accent" td-menu-footer>
+        See All products
+      </button>
+      </td-menu>
+    </md-menu>
     <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank">
       <md-icon>chrome_reader_mode</md-icon>
     </a>
@@ -10,6 +30,8 @@
       <md-icon svgIcon="assets:github"></md-icon>
     </a>
   </div>
+
+
   <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
     <div flex-gt-sm="column.columnSize" *ngFor="let column of imageArray">
       <md-card *ngFor="let image of column.column">
@@ -18,7 +40,8 @@
           <div layout="row" class="tc-grey-600">
             <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
             <button md-icon-button mdTooltip="Comment"><md-icon>comment</md-icon></button>
-            <button md-icon-button mdTooltip="Add to cart"><md-icon>add_shopping_cart</md-icon></button>
+            <button md-icon-button mdTooltip="Add to cart" (click)="clickedAddToCart(image.url)">
+              <md-icon>add_shopping_cart</md-icon></button>
             <span flex></span>
             <button md-icon-button mdTooltip="Share"><md-icon>share</md-icon></button>
           </div>

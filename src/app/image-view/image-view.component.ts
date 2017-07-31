@@ -1,3 +1,5 @@
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageViewComponent implements OnInit {
 
-  constructor() { }
+  imageUrl: string;
 
-  ngOnInit() {
+  constructor(private location: Location, private router: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.router.params.subscribe( (data: any) => {
+      this.imageUrl = data.url;
+    });
   }
-  is 
+
+  clickedImage(): void {
+    this.location.back();
+  }
 }
