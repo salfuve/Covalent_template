@@ -5,6 +5,8 @@ import { Title } from '@angular/platform-browser';
 import { TdLoadingService, TdDigitsPipe, CovalentNotificationsModule } from '@covalent/core';
 import { MdSnackBar } from '@angular/material';
 import { CartService } from '../cart.service';
+import { Column, Image, Item } from '../shared/backend/models';
+import { imageArray } from '../shared/backend/mock-data';
 
 @Component({
   selector: 'qs-dashboard',
@@ -13,71 +15,8 @@ import { CartService } from '../cart.service';
 })
 
 export class DashboardComponent implements OnInit {
-  itemArray: any[] = [];
-  imageArray: any[] = [{
-
-    columnSize: '40',
-    column: [{
-      name: '',
-      url: '../../assets/images/alex-lambley-205711-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/norman-toth-177290-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/kaci-baum-108756-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/ariel-lustre-232891-min.jpg',
-      isclicked: false,
-    }],
-  }, {
-    columnSize: '25',
-    column: [{
-      name: '',
-      url: '../../assets/images/pete-bellis-189599-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/remy_loz-188297-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/brooke-cagle-195860-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/freestocks-org-195640-min.jpg',
-      isclicked: false,
-    }],
-  }, {
-    columnSize: '25',
-    column: [{
-      name: '',
-      url: '../../assets/images/pete-bellis-189613-min.jpg',
-      isclicked: false,
-    }, {
-      name: '',
-      url: '../../assets/images/pete-bellis-191833-min.jpg',
-      isclicked: false,
-    },
-    ],
-  }, {
-    columnSize: '25',
-    column: [{
-      name: '',
-      url: '../../assets/images/valerie-elash-275588-min.jpg',
-      isclicked: false,
-    },
-    {
-      name: '',
-      url: '../../assets/images/jason-blackeye-221058-min.jpg',
-      isclicked: false,
-    }],
-  }];
+  itemArray: Item;
+  images: Image[] = imageArray;
 
   constructor(
     private _titleService: Title,
