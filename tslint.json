@@ -5,6 +5,7 @@
       true,
       "statements"
     ],
+    "experimentalDecorators":false,
     "array-type": [
       true,
       "array" 

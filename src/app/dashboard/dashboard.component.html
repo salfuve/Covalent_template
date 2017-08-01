@@ -14,7 +14,7 @@
         <md-nav-list dense>
           <a md-list-item *ngFor="let item of itemArray">
             <md-icon md-list-avatar>today</md-icon>
-            <h4 md-line><span class="text-wrap">item</span></h4>
+            <h4 md-line><span class="text-wrap">{{item}}</span></h4>
           </a>
           <md-divider *ngIf="!last"></md-divider>
         </md-nav-list>

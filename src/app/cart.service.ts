@@ -1,5 +1,7 @@
+import { observable } from 'rxjs/symbol/observable';
 import { Injectable } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CartService {
@@ -73,7 +75,11 @@ export class CartService {
     });
     items.push(imageUrl);
   }
+
   public getNitems(): number {
     return this.itemArray.length;
+  }
+  public getItems(): any {
+    return this.itemArray;
   }
 }
