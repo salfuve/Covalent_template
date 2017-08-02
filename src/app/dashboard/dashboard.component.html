@@ -13,8 +13,11 @@
         <div td-menu-header class="md-subhead">Products in your cart</div>
         <md-nav-list dense>
           <a md-list-item *ngFor="let item of itemArray">
-            <md-icon md-list-avatar><img class="img-avatar" src="../../assets/images/alex-lambley-205711-icon.jpg"> </md-icon>
-            <h4 md-line><span class="text-wrap">{{item}}</span></h4>
+            <md-icon md-list-avatar><img class="img-avatar" [src]=item.url> </md-icon>
+            <h4 md-line>
+              <span class="text-wrap">{{item.name}}</span>
+              <span class="text-wrap">x{{item.count}}</span>
+              </h4>
           </a>
           <md-divider *ngIf="!last"></md-divider>
         </md-nav-list>
@@ -40,7 +43,7 @@
           <div layout="row" class="tc-grey-600">
             <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
             <button md-icon-button mdTooltip="Comment"><md-icon>comment</md-icon></button>
-            <button md-icon-button mdTooltip="Add to cart" (click)="clickedAddToCart(image.url)">
+            <button md-icon-button mdTooltip="Add to cart" (click)="clickedAddToCart(image)">
               <md-icon>add_shopping_cart</md-icon></button>
             <span flex></span>
             <button md-icon-button mdTooltip="Share"><md-icon>share</md-icon></button>

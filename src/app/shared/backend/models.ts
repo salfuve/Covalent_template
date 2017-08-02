@@ -8,6 +8,7 @@ export interface Column {
     url: string;
     url_icon: string;
     isclicked: boolean;
+    count: number;
 }
 export interface Image {
     columnSize: string;

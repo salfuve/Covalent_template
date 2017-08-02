@@ -34,9 +34,9 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/image-view', { url: imageUrl }]);
   }
 
-  clickedAddToCart(imageUrl: any): void {
-    const img: string = imageUrl;
-    this.cartService.clickedAddToCart(img);
+  clickedAddToCart(image: Column): void {
+    image.count++;
+    this.cartService.clickedAddToCart(image);
   }
 
   notifications(): number {
