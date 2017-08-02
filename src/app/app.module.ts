@@ -15,7 +15,7 @@ import { routedComponents, AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 import { ImageViewComponent } from './image-view/image-view.component';
-import { CartComponent } from './cart/cart.component';
+import { CardComponent } from './card/card.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -26,8 +26,8 @@ const httpInterceptorProviders: Type<any>[] = [
     AppComponent,
     routedComponents,
     ImageViewComponent,
-    CartComponent,
     DashboardComponent,
+    CardComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     AppRoutingModule,

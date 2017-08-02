@@ -1,0 +1,17 @@
+  <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+    <div flex-gt-sm="column.columnSize" *ngFor="let column of images">
+      <md-card *ngFor="let image of column.column">
+        <img class="img" md-card-image (click)="clickedImage(image.url)" [class.biggerImg]="image.isclicked" [src]=image.url>
+        <md-card-actions>
+          <div layout="row" class="tc-grey-600">
+            <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
+            <button md-icon-button mdTooltip="Comment"><md-icon>comment</md-icon></button>
+            <button md-icon-button mdTooltip="Add to cart" (click)="clickedAddToCart(image)">
+              <md-icon>add_shopping_cart</md-icon></button>
+            <span flex></span>
+            <button md-icon-button mdTooltip="Share"><md-icon>share</md-icon></button>
+          </div>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>

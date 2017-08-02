@@ -24,7 +24,6 @@ export class CartService {
       duration: duration,
       extraClasses: ['bgc-' + color + '-600'],
     });
-
     item = { name: image.name, url: image.url, count: image.count };
     let result: boolean = this.isRepeated(item, items);
     if (!(result)) {
