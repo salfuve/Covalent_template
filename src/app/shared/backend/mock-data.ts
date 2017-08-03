@@ -69,6 +69,13 @@ export const imageArray: Image[] = [{
         isclicked: false,
         count: 0,
     },
+    {
+        name: 'brooke-cagle',
+        url: '../../assets/images/brooke-cagle-195856-min.jpg',
+        url_icon: '',
+        isclicked: false,
+        count: 0,
+    },
     ],
 }, {
     columnSize: '25',
@@ -82,6 +89,13 @@ export const imageArray: Image[] = [{
     {
         name: 'jason-blackeye',
         url: '../../assets/images/jason-blackeye-221058-min.jpg',
+        url_icon: '',
+        isclicked: false,
+        count: 0,
+    },
+    {
+        name: 'pete-bellis',
+        url: '../../assets/images/pete-bellis-224507-min.jpg',
         url_icon: '',
         isclicked: false,
         count: 0,

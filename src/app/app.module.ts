@@ -1,5 +1,4 @@
 import { CartService } from './cart.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule, Type } from '@angular/core';
 import { BrowserModule, Title }  from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +13,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { routedComponents, AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { CardComponent } from './card/card.component';
 

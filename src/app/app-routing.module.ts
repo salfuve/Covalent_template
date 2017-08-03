@@ -14,8 +14,9 @@ const routes: Routes = [
     },
 
     {
-        path: 'image-view',
         component: ImageViewComponent,
+        path: 'image-view',
+
     },
 ];
 

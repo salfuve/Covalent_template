@@ -16,7 +16,6 @@ import { imageArray } from '../shared/backend/mock-data';
 
 export class DashboardComponent implements OnInit {
   itemArray: Item;
-  images: Image[] = imageArray;
 
   constructor(
     private _titleService: Title,
@@ -27,16 +26,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this._titleService.setTitle('Covalent Quickstart');
-    this.itemArray = this.cartService.getItems();
-  }
-
-  clickedImage(imageUrl: any): void {
-    this.router.navigate(['/image-view', { url: imageUrl }]);
-  }
-
-  clickedAddToCart(image: Column): void {
-    image.count++;
-    this.cartService.clickedAddToCart(image);
   }
 
   notifications(): number {
