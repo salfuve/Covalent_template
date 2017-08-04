@@ -34,5 +34,4 @@ export class CardComponent implements OnInit {
   clickedAddToCart(image: Column): void {
     this.cartService.clickedAddToCart(image);
   }
-
 }

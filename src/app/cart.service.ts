@@ -43,4 +43,14 @@ export class CartService {
   public getItems(): any {
     return this.itemArray;
   }
+  // public removeItem(itemArray: Item[], itemUrl: string): any {
+  //   let items: Item[] = itemArray;
+  //   for (let i: number = 0; i < items.length; i++) {
+  //     if (itemUrl === items[i].url) {
+  //       items.splice(items.indexOf(items[i]), 1);
+  //       items[i].count = 0;
+  //     }
+  //     return items;
+  //   }
+  // }
 }

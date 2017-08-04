@@ -1,6 +1,6 @@
 <td-layout-nav logo="assets:covalent">
   <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <span>Quickstart</span>
+    <span>e-Commerce</span>
     <span flex></span>
     <button md-icon-button [mdMenuTriggerFor]="cart" mdTooltip="Cart" (click)="clickedCart()"> 
       <td-notification-count positionX="after" positionY="bottom"color="accent" [notifications]="notifications()">
@@ -12,11 +12,12 @@
         <div td-menu-header class="md-subhead">Products in your cart</div>
         <md-nav-list dense>
           <a md-list-item *ngFor="let item of itemArray">
-            <md-icon md-list-avatar><img class="img-avatar" [src]=item.url> </md-icon>
+            <md-icon md-list-avatar (click)="clickedItem(item.url)"><img class="img-avatar" [src]=item.url> </md-icon>
             <h4 md-line>
               <span class="x-number">x{{item.count}}</span>
-              <span class="text-wrap">{{item.name}}</span>
+              <span class="text-wrap x-name">{{item.name}}</span>
             </h4>
+             <!-- <button md-icon-button mdTooltip="remove" (click)="clickedRemove(itemArray, item.url)"><md-icon>remove</md-icon></button>  -->
           </a>
         </md-nav-list>
         <button md-button color="accent" td-menu-footer>

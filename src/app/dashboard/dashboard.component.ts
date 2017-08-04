@@ -36,4 +36,10 @@ export class DashboardComponent implements OnInit {
   clickedCart(): void {
     this.itemArray = this.cartService.getItems();
   }
+  clickedItem(imageUrl: any): void {
+    this.router.navigate(['/image-view', { url: imageUrl }]);
+  }
+  // clickedRemove(itemArray: Item[], item: string): void {
+  //   this.itemArray = this.cartService.removeItem(itemArray, item);
+  // }
 }
