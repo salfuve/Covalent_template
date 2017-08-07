@@ -2,7 +2,7 @@ import { observable } from 'rxjs/symbol/observable';
 import { Injectable } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
-import { Column, Image, Item } from './shared/backend/models';
+import { Column, Article, Item } from './shared/backend/models';
 
 @Injectable()
 export class CartService {
@@ -11,7 +11,7 @@ export class CartService {
   item: Item = { name: '', url: '', count: 0 };
   constructor(public snackBar: MdSnackBar) { }
 
-  public clickedAddToCart(image: Column): void {
+  public clickedAddToCart(article: Column): void {
     let item: Item = this.item;
     const items: Item[] = this.itemArray;
     const msg: string = 'Added to cart';
@@ -23,8 +23,8 @@ export class CartService {
       duration: duration,
       extraClasses: ['bgc-' + color + '-600'],
     });
-    image.count++;
-    item = { name: image.name, url: image.url, count: image.count };
+    article.count++;
+    item = { name: article.name, url: article.url, count: article.count };
     this.isRepeated(item, items);
     items.push(item);
   }

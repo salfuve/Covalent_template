@@ -5,8 +5,8 @@ import { Title } from '@angular/platform-browser';
 import { TdLoadingService, TdDigitsPipe, CovalentNotificationsModule } from '@covalent/core';
 import { MdSnackBar } from '@angular/material';
 import { CartService } from '../cart.service';
-import { Column, Image, Item } from '../shared/backend/models';
-import { imageArray } from '../shared/backend/mock-data';
+import { Column, Article, Item } from '../shared/backend/models';
+import { articleArray } from '../shared/backend/mock-data';
 
 @Component({
   selector: 'qs-app-card',
@@ -15,7 +15,8 @@ import { imageArray } from '../shared/backend/mock-data';
 })
 export class CardComponent implements OnInit {
   itemArray: Item;
-  images: Image[] = imageArray;
+  @Input() card: Column;
+
   constructor(
     private _titleService: Title,
     private router: Router,
@@ -25,13 +26,13 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemArray = this.cartService.getItems();
-
   }
-  clickedImage(imageUrl: any): void {
+
+  clickedImage(imageUrl: string): void {
     this.router.navigate(['/image-view', { url: imageUrl }]);
   }
 
-  clickedAddToCart(image: Column): void {
-    this.cartService.clickedAddToCart(image);
+  clickedAddToCart(article: Column): void {
+    this.cartService.clickedAddToCart(article);
   }
 }

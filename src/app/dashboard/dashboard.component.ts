@@ -1,12 +1,13 @@
 import { TdDialogService } from '@covalent/core/dialogs/services/dialog.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TdLoadingService, TdDigitsPipe, CovalentNotificationsModule } from '@covalent/core';
 import { MdSnackBar } from '@angular/material';
 import { CartService } from '../cart.service';
-import { Column, Image, Item } from '../shared/backend/models';
-import { imageArray } from '../shared/backend/mock-data';
+import { Column, Article, Item } from '../shared/backend/models';
+import { articleArray } from '../shared/backend/mock-data';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'qs-dashboard',
@@ -16,6 +17,7 @@ import { imageArray } from '../shared/backend/mock-data';
 
 export class DashboardComponent implements OnInit {
   itemArray: Item;
+  artArray: Article[] = articleArray;
 
   constructor(
     private _titleService: Title,
@@ -26,6 +28,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this._titleService.setTitle('Covalent Quickstart');
+
   }
 
   notifications(): number {
@@ -36,6 +39,7 @@ export class DashboardComponent implements OnInit {
   clickedCart(): void {
     this.itemArray = this.cartService.getItems();
   }
+  // when you click the icon of an item inside the cart
   clickedItem(imageUrl: any): void {
     this.router.navigate(['/image-view', { url: imageUrl }]);
   }

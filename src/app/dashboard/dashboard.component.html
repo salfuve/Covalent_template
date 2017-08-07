@@ -17,7 +17,7 @@
               <span class="x-number">x{{item.count}}</span>
               <span class="text-wrap x-name">{{item.name}}</span>
             </h4>
-             <!-- <button md-icon-button mdTooltip="remove" (click)="clickedRemove(itemArray, item.url)"><md-icon>remove</md-icon></button>  -->
+            <!-- <button md-icon-button mdTooltip="remove" (click)="clickedRemove(itemArray, item.url)"><md-icon>remove</md-icon></button>  -->
           </a>
         </md-nav-list>
         <button md-button color="accent" td-menu-footer>
@@ -32,4 +32,10 @@
       <md-icon svgIcon="assets:github"></md-icon>
     </a>
   </div>
-  <qs-app-card></qs-app-card>
+  <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+    <div flex-gt-sm="" *ngFor="let column of artArray">
+      <div *ngFor="let image of column.column">
+        <qs-app-card [card]="image"></qs-app-card>
+      </div>
+    </div>
+  </div>

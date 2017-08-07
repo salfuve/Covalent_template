@@ -10,7 +10,7 @@ export interface Column {
     isclicked: boolean;
     count: number;
 }
-export interface Image {
+export interface Article {
     columnSize: string;
     column: Column[];
 }

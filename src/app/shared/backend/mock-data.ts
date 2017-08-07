@@ -1,6 +1,6 @@
-import { Column, Image, Item } from './models';
+import { Column, Article, Item } from './models';
 
-export const imageArray: Image[] = [{
+export const articleArray: Article[] = [{
     columnSize: '40',
     column: [{
         name: 'alex-lambley',
