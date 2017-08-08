@@ -21,6 +21,5 @@ export class ImageViewComponent implements OnInit {
 
   clickedImage(): void {
     this.location.back();
-    console.log("quiero cerrrrrrrar")
   }
 }

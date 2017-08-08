@@ -44,6 +44,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/image-view', { url: imageUrl }]);
   }
   // clickedRemove(itemArray: Item[], item: string): void {
-  //   this.itemArray = this.cartService.removeItem(itemArray, item);
-  // }
+  //    this.itemArray = this.cartService.removeItem(itemArray, item);
+  //  }
 }
