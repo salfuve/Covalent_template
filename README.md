@@ -1,6 +1,5 @@
-# Covalent e-Commerce template
-
-Template with @covalent packages
+# Covalent mosaic 
+ Mosaic template with @covalent packages
 
 ## Setup
 
