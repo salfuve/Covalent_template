@@ -1,7 +1,7 @@
-<md-card>
+<md-card class="push-bottom">
   <img class="img" md-card-image (click)="clickedImage(card.url)" [class.biggerImg]="card.isclicked" [src]=card.url>
   <md-card-actions>
-    <div layout="row" class="tc-grey-600">
+    <div layout="row" class="color-icons">
       <button md-icon-button mdTooltip="Like"><md-icon>favorite</md-icon></button>
       <button md-icon-button mdTooltip="Comment"><md-icon>comment</md-icon></button>
       <button class="add-to-cart" md-icon-button mdTooltip="Add to cart" (click)="clickedAddToCart(card)" onclick="style.color='orange'">

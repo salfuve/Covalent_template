@@ -1,6 +1,6 @@
 import { CartService } from './cart.service';
 import { NgModule, Type } from '@angular/core';
-import { BrowserModule, Title }  from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
@@ -46,7 +46,7 @@ const httpInterceptorProviders: Type<any>[] = [
     httpInterceptorProviders,
     CartService,
   ], // additional providers needed for this module
-  entryComponents: [ ],
-  bootstrap: [ AppComponent ],
+  entryComponents: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

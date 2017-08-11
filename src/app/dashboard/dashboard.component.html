@@ -32,10 +32,70 @@
       <md-icon svgIcon="assets:github"></md-icon>
     </a>
   </div>
-  <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']">
-    <div *ngFor="let column of artArray">
-      <div *ngFor="let image of column.column">
-        <qs-app-card [card]="image"></qs-app-card>
+
+  <!-- XS -> 1col -->
+  <div layout-xs="row" tdMediaToggle="xs" [mediaClasses]="['push-xs']" hide-gt-xs>
+    <div flex="100">
+      <div *ngFor="let article of getColumn(0, 1)">
+        <qs-app-card [card]="article"></qs-app-card>
       </div>
     </div>
   </div>
+
+  <!-- MD -> 2col -->
+  <div layout-gt-xs="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-xs']" hide-xs hide-gt-md>
+    <div flex="50">
+      <div *ngFor="let article of getColumn(0, 2)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+    <div flex="50">
+      <div *ngFor="let article of getColumn(1, 2)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- LG -> 3col -->
+  <div layout-gt-sm="row" tdMediaToggle="gt-sm" [mediaClasses]="['push-sm']" hide-xs hide-md hide-gt-lg>
+    <div flex="33">
+      <div *ngFor="let article of getColumn(0, 3)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+    <div flex="33">
+      <div *ngFor="let article of getColumn(1, 3)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+    <div flex="33">
+      <div *ngFor="let article of getColumn(2, 3)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+  </div> 
+
+
+  <!-- GT-LG -> 4col -->
+  <div layout-gt-md="row" tdMediaToggle="gt-md" [mediaClasses]="['push-sm']" hide-xs hide-sm hide-md hide-lg >
+    <div flex="25">
+      <div *ngFor="let article of getColumn(0, 4)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+    <div flex="25">
+      <div *ngFor="let article of getColumn(1, 4)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+    <div flex="25">
+      <div *ngFor="let article of getColumn(2, 4)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+    <div flex="25">
+      <div *ngFor="let article of getColumn(3, 4)">
+        <qs-app-card [card]="article"></qs-app-card>
+      </div>
+    </div>
+  </div> 

@@ -2,7 +2,7 @@ import { observable } from 'rxjs/symbol/observable';
 import { Injectable } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
-import { Column, Article, Item } from './shared/backend/models';
+import { Article, Item } from './shared/backend/models';
 
 @Injectable()
 export class CartService {
@@ -11,7 +11,7 @@ export class CartService {
   item: Item = { name: '', url: '', count: 0 };
   constructor(public snackBar: MdSnackBar) { }
 
-  public clickedAddToCart(article: Column): void {
+  public clickedAddToCart(article: Article): void {
     let item: Item = this.item;
     const items: Item[] = this.itemArray;
     const msg: string = 'Added to cart';

@@ -3,14 +3,10 @@ export interface Item {
     url: string;
     count: number;
 }
-export interface Column {
+export interface Article {
     name: string;
     url: string;
     url_icon: string;
     isclicked: boolean;
     count: number;
-}
-export interface Article {
-    columnSize: string;
-    column: Column[];
 }

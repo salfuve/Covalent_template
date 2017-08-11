@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { TdLoadingService, TdDigitsPipe, CovalentNotificationsModule } from '@covalent/core';
 import { MdSnackBar } from '@angular/material';
 import { CartService } from '../cart.service';
-import { Column, Article, Item } from '../shared/backend/models';
+import { Article, Item } from '../shared/backend/models';
 import { articleArray } from '../shared/backend/mock-data';
 
 @Component({
@@ -15,7 +15,7 @@ import { articleArray } from '../shared/backend/mock-data';
 })
 export class CardComponent implements OnInit {
   itemArray: Item;
-  @Input() card: Column;
+  @Input() card: Article;
 
   constructor(
     private _titleService: Title,
@@ -32,7 +32,7 @@ export class CardComponent implements OnInit {
     this.router.navigate(['/image-view', { url: imageUrl }]);
   }
 
-  clickedAddToCart(article: Column): void {
+  clickedAddToCart(article: Article): void {
     this.cartService.clickedAddToCart(article);
   }
 }

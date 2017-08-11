@@ -1,8 +1,7 @@
-import { Column, Article, Item } from './models';
+import { Article, Item } from './models';
 
-export const articleArray: Article[] = [{
-    columnSize: '40',
-    column: [{
+export const articleArray: Article[] =
+    [{
         name: 'alex-lambley',
         url: '../../assets/images/alex-lambley-205711-min.jpg',
         url_icon: '',
@@ -26,10 +25,8 @@ export const articleArray: Article[] = [{
         url_icon: '',
         isclicked: false,
         count: 0,
-    }],
-}, {
-    columnSize: '25',
-    column: [{
+    },
+    {
         name: 'pete-bellis',
         url: '../../assets/images/pete-bellis-189599-min.jpg',
         url_icon: '',
@@ -53,10 +50,9 @@ export const articleArray: Article[] = [{
         url_icon: '',
         isclicked: false,
         count: 0,
-    }],
-}, {
-    columnSize: '25',
-    column: [{
+    },
+    {
+
         name: 'pete-bellis',
         url: '../../assets/images/pete-bellis-189613-min.jpg',
         url_icon: '',
@@ -76,10 +72,7 @@ export const articleArray: Article[] = [{
         isclicked: false,
         count: 0,
     },
-    ],
-}, {
-    columnSize: '25',
-    column: [{
+    {
         name: 'valerie-elash',
         url: '../../assets/images/valerie-elash-275588-min.jpg',
         url_icon: '',
@@ -99,5 +92,5 @@ export const articleArray: Article[] = [{
         url_icon: '',
         isclicked: false,
         count: 0,
-    }],
-}];
+    },
+];
