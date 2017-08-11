@@ -1,6 +1,6 @@
-# Covalent QuickStart
+# Covalent e-Commerce template
 
-Quickstart App with @covalent packages
+Template with @covalent packages
 
 ## Setup
 
